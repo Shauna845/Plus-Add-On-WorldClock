@@ -1,6 +1,61 @@
-h1 {
+body {
+  font-family: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;
+  opacity: 0.8;
+  background-image: radial-gradient(white 0.5px, transparent 0.5px),
+    radial-gradient(white 0.5px, #53a8b6 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff4e1;
+  padding: 60px;
+  box-shadow: 5px -5px teal;
+  border-radius: 10px;
   text-align: center;
 }
+h1 {
+  text-align: center;
+  font-size: 36px;
+}
+h2 {
+  margin: 0 0 5px;
+  font-size: 28px;
+}
+select {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+.city {
+  display: flex;
+  margin: 20px 0px;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+.city:last-child {
+  border: none;
+}
+
+.date {
+  opacity: 0.7;
+}
+.time {
+  font-size: 46px;
+  font-weight: bold;
+}
+.time small {
+  font-size: 23px;
+  vertical-align: middle;
+  line-height: 36px;
+}
+
 footer {
   text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.9);
 }

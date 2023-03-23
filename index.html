@@ -12,12 +12,13 @@
   <body>
     <div class="container">
       <h1>🕧 World Clock🕝</h1>
-      <select>
+      <select id="city">
         <option value="">Select a city:</option>
-        <option value="dublin">Dublin</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="wellington">Wellington</option>
+        <option value="Europe/Dublin">Dublin</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Pacific/Auckland">Auckland</option>
       </select>
+      <div id="cities">
       <div class="city" id="dublin">
         <div>
           <h2>Dublin</h2>
@@ -34,9 +35,9 @@
             </div>
             <div class="time">04:53<small>pm</small></div>
           </div>
-        <div class="city" id="wellington">
+        <div class="city" id="auckland">
             <div>
-              <h2>Wellington</h2>
+              <h2>Auckland</h2>
               <div class="date">23rd March 2023</div>
             </div>
             <div class="time">04:53<small>pm</small></div>
@@ -44,6 +45,8 @@
         </div>
       </div>
     </div>
+    </div>
+
     </body>
     <footer>
       This project was coded by <strong>Shauna Bratten</strong> and is

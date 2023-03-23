@@ -18,14 +18,37 @@ function updateTime() {
     "hh:mm:ss [<small>]a[</small>]"
   );
 
-  let wellingtonElement = document.querySelector("#wellington");
-  let wellingtonDateElement = wellingtonElement.querySelector(".date");
-  let wellingtonTimeElement = wellingtonElement.querySelector(".time");
-  let wellingtonTime = moment().tz("Pacific/Auckland");
+  let aucklandElement = document.querySelector("#auckland");
+  let aucklandDateElement = aucklandElement.querySelector(".date");
+  let aucklandTimeElement = aucklandElement.querySelector(".time");
+  let aucklandTime = moment().tz("Pacific/Auckland");
 
-  wellingtonDateElement.innerHTML = wellingtonTime.format("dddd D MMMM YYYY");
-  wellingtonTimeElement.innerHTML = wellingtonTime.format(
+  aucklandDateElement.innerHTML = aucklandTime.format("dddd D MMMM YYYY");
+  aucklandTimeElement.innerHTML = aucklandTime.format(
     "hh:mm:ss [<small>]a[</small>]"
   );
 }
 setInterval(updateTime, 1000);
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+        <div>
+          <h2>${cityName}</h2>
+          <div class="date">${cityTime.format("dddd D MMMM YYYY")}</div>
+        </div>
+        <div class="time">${cityTime.format(
+          "hh:mm:ss"
+        )}<small>${cityTime.format("a")}</small>
+          </div>
+      </div>
+  `;
+}
+
+let citiesSelectElement = document.querySelector("#city");
+
+citiesSelectElement.addEventListener("change", updateCity);

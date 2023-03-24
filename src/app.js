@@ -28,7 +28,6 @@ function updateTime() {
     "hh:mm:ss [<small>]a[</small>]"
   );
 }
-setInterval(updateTime, 1000);
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
@@ -53,6 +52,8 @@ function updateCity(event) {
   `;
 }
 
+updateTime();
+setInterval(updateTime, 1000);
 let citiesSelectElement = document.querySelector("#city");
 
 citiesSelectElement.addEventListener("change", updateCity);
